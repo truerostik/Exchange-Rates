@@ -1,0 +1,35 @@
+import PyQt5
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QRadioButton, QGroupBox, QButtonGroup, QListWidget
+from PIL import Image
+app = QApplication([])
+main_win = QWidget()
+main_win.setWindowTitle('currency')
+main_win.resize(900, 600)
+
+rbtn_1 = QPushButton('Курс криптовалют')
+rbtn_2 = QPushButton('Валютные курсы')
+rbtn_3 = QPushButton('Конвертер валют')
+
+list = QListWidget()
+
+layout_ans1 = QHBoxLayout()
+layout_ans2 = QHBoxLayout()
+layout_ans3 = QHBoxLayout()
+layout_ans4 = QVBoxLayout()
+layout_ans5 = QVBoxLayout()
+
+
+layout_ans3.addWidget(rbtn_1)
+layout_ans3.addWidget(rbtn_2)
+layout_ans3.addWidget(rbtn_3)
+layout_ans4.addWidget(list)
+
+layout_ans5.addLayout(layout_ans1)
+layout_ans5.addLayout(layout_ans2)
+layout_ans5.addLayout(layout_ans3)
+layout_ans5.addLayout(layout_ans4)
+main_win.setLayout(layout_ans5)
+main_win.setLayout(layout_ans4)
+
+main_win.show()
+app.exec_()
